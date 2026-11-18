@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="card">
+        <h2>Register</h2>
+        <p class="small-text">Create a username and password to get started.</p>
+
+        <form method="POST" class="form-box">
+            <label>Username</label>
+            <input type="text" name="username" required>
+
+            <label>Password</label>
+            <input type="password" name="password" required>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <p class="small-text">
+             <a style="color: aqua;" href="{{ url_for('login_page') }}">Back to Login</a>
+        </p>
+    </section>
+{% endblock %}

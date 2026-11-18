@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="card">
+        <h2>Mark Attendance</h2>
+        <p class="small-text">Select a student and mark their attendance.</p>
+
+        <form method="POST" class="form-box">
+            <label>Student</label>
+            <select name="student_id" required>
+                <option value="">Select Student</option>
+                {% for student in students %}
+                    <option value="{{ student['id'] }}">{{ student['name'] }} ({{ student['department'] }})</option>
+                {% endfor %}
+            </select>
+
+            <label>Date</label>
+            <input type="date" name="attendance_date">
+
+            <label>Status</label>
+            <select name="status" required>
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+            </select>
+
+            <button type="submit">Mark Attendance</button>
+        </form>
+    </section>
+{% endblock %}

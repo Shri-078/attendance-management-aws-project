@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="card">
+        <h2>Add Student</h2>
+        <p class="small-text">Fill in the student details and click save.</p>
+
+        <form method="POST" class="form-box">
+            <label>Student Name</label>
+            <input type="text" name="name" placeholder="Enter student name" required>
+
+            <label>Department</label>
+            <input type="text" name="department" placeholder="Enter department" required>
+
+            <button type="submit">Add Student</button>
+        </form>
+    </section>
+{% endblock %}
